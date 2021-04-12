@@ -62,7 +62,6 @@ tr:nth-child(even) {
 }
 
 .csv {
-  
   background-color: #17a2b8;
   color: #fff;
   border-radius: 8px;
@@ -193,4 +192,70 @@ td {
 }
 .dataTables_info {
   display: none;
+}
+.buttons-csv {
+  background-color: #17a2b8;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  margin-right: 4px;
+  transition: 0.3s;
+}
+
+.buttons-csv:hover {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+/* .dt-buttons {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: black;
+  margin-left: 40%;
+  z-index: 10;
+} */
+
+.tableexport-caption {
+  display: grid;
+  background: #e6eaed;
+  border: none;
+  border-radius: 15px;
+  box-shadow: -2px -3px 2px #ffffff70, 1px 1px 15px #00000090;
+  font-family: "Poppins", sans-serif;
+  position: fixed;
+  width: 403px;
+  height: 150px;
+  margin-left: 50%;
+  z-index: 10;
+  transition: 0.3s;
+}
+.tableexport-caption button {
+  width: 200px;
+  margin-left: 25%;
+  margin-top: 5px;
+  align-items: center;
+  cursor: pointer;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.tableexport-caption button :hover {
+  padding-right: 25px;
+  padding-left: 25px;
+  background: black;
+}
+
+.saveFileName {
+  justify-content: center;
+  align-items: center;
+  margin-left: 25%;
+  width: 50%;
+  display: flex;
+  margin-bottom: 5px;
+}
+.saveFileName input {
+  margin-left: 6px;
+  border-radius: 10px;
+  border: 1px solid #e6eaed;
 }
