@@ -94,6 +94,11 @@
                     class="btn btn-primary btn-sm" this.disabled="true;">
                     Download
                   </button>
+                  <!-- Button trigger modal For Table Export in CSV Starts
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Launch CSV Downloader
+                  </button>
+                  Button trigger modal For Table Export in CSV ENDS-->
 
                   <button type="button" style="margin-right: 5px;" name="convert" id="uploadToServer-btn"
                     class="btn btn-primary btn-sm" this.disabled="true;">
@@ -290,6 +295,29 @@
 
 
 
+  <!-- Modal For Table Export in CSV  Starts
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          donwload korba?
+          <button class="buttons-csv"> asdas</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="csvDownload" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  Modal For Table Export in CSV  Ends -->
 
 
 
@@ -315,7 +343,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.7/xlsx.core.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.4-a/xls.core.min.js"></script>
   <!-- <script src="./libs/xlsx.full.min.js"></script> -->
+
   <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+
   <script src="./libs/tableexport.min.js"></script>
   <script src="./libs/papaparse.min.js"></script>
 
