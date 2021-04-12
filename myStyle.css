@@ -1,0 +1,196 @@
+table {
+  border-collapse: collapse;
+  border-radius: 5px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+th {
+  background: #eee;
+  color: black;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 10px 10px;
+  vertical-align: 200px;
+  border: 1px solid #e6eaed;
+}
+
+tr,
+td {
+  text-align: center;
+  font-size: small;
+}
+
+tr:nth-child(even) {
+  background: #e6eaed;
+}
+
+.center {
+  margin: auto;
+  width: 96%;
+  padding: 10px;
+}
+
+#custom-btn {
+  display: flex;
+  margin-left: 50%;
+  -ms-flex-align: center;
+  color: #0000;
+  text-align: center;
+  font-size: large;
+  background-color: black;
+}
+
+.xlsx {
+  background-color: #17a2b8;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  margin-right: 4px;
+  transition: 0.3s;
+}
+
+.xlsx:hover {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.csv {
+  
+  background-color: #17a2b8;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  margin-right: 4px;
+  transition: 0.3s;
+}
+
+.csv:hover {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.txt {
+  background-color: #17a2b8;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  margin-right: 4px;
+  transition: 0.3s;
+}
+
+.txt:hover {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.csv-export-btn-div {
+  display: none;
+}
+
+/* For Dummy Table  */
+#dummy {
+  display: none;
+}
+
+/* Datatable pagination  */
+.pagination {
+  padding-left: 19rem;
+}
+.contentEditableStyle {
+  border: 10px solid red;
+  background-color: aquamarine;
+}
+
+/* Edit and delete button alignment */
+.actionOptions {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  align-items: flex-start;
+}
+thead,
+th {
+  text-align: center;
+  font-size: medium;
+}
+table,
+th,
+td {
+  border: 2px solid #e6eaed;
+}
+
+.modelBoxOuterLayer {
+  margin: auto;
+  padding: 10px;
+  width: 100%;
+  background: #f8f9fa;
+}
+
+.modelBoxInnerLayer {
+  width: 60%;
+  height: 100%;
+  background-color: #e8ecf0;
+  margin-left: 20%;
+  border-radius: 10px;
+  box-shadow: -3px -3px 5px #ffffff70, 3px 3px 15px #00000090;
+}
+
+#tableContainer {
+  display: table; /* IE8+ and all other modern browsers */
+  position: relative;
+  margin-left: auto;
+  margin-right: 11px;
+}
+
+.headerWithCsvName {
+  display: flex;
+  justify-content: space-between;
+}
+
+#ImportAnotherFileField {
+  display: none;
+}
+
+#csv-export-btn {
+  background-color: #1ca5b8;
+}
+
+.editbtn {
+  background-color: #66b2ff;
+}
+
+.main-table-container {
+  background: #e6eaed;
+  border: none;
+  border-radius: 15px;
+  box-shadow: -3px -3px 5px #ffffff70, 3px 3px 15px #00000090;
+}
+
+.table-info-card {
+  background: #e6eaed;
+  border: none;
+  border-radius: 15px;
+  box-shadow: inset -2px -3px 2px #ffffff70, inset 1px 1px 15px #00000090;
+  font-family: "Poppins", sans-serif;
+}
+#csvFileInput {
+  background: #e6eaed;
+}
+
+#csvRoot {
+  table-layout: fixed;
+  width: 1000px;
+}
+#csvRoot td {
+  overflow-wrap: anywhere;
+}
+.dataTables_info {
+  display: none;
+}
