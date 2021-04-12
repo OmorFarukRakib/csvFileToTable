@@ -15,14 +15,15 @@ jQuery(document).ready(function () {
     // var $scrollBody = $($("#csvRoot").DataTable().table().node()).parent();
     // $scrollBody.scrollTop($scrollBody.get(0).scrollHeight);
     // scrolling to the bottom for every new row entry ends
-
+    var uploadedFileName = $("#csvFileInput").val().split("\\").pop();
+    uploadedFileName = uploadedFileName.split(".").slice(0, -1).join(".");
     var lastIndex = $("#csvRoot tr:nth-child(1) td:last").index(); // This will get the last column index num so that action column is not downloaded
 
     $("#csvRoot").tableExport({
       headers: true, // (Boolean), display table headers (th or td elements) in the <thead>, (default: true)
       footers: true, // (Boolean), display table footers (th or td elements) in the <tfoot>, (default: false)
       formats: ["xlsx", "csv", "txt"], // (String[]), filetype(s) for the export, (default: ['xlsx', 'csv', 'txt'])
-      filename: "Table Data", // (id, String), filename for the downloaded file, (default: 'id')
+      filename: uploadedFileName, // (id, String), filename for the downloaded file, (default: 'id')
       // bootstrap: false,                   // (Boolean), style buttons using bootstrap, (default: true)
       //exportButtons: true,                // (Boolean), automatically generate the built-in export buttons for each of the specified formats (default: true)
       position: "top", // (top, bottom), position of the caption element relative to table, (default: 'bottom')
@@ -30,7 +31,7 @@ jQuery(document).ready(function () {
       ignoreCols: [0, lastIndex], // (Number, Number[]), column indices to exclude from the exported file(s) (default: null)
       trimWhitespace: true, // (Boolean), remove all leading/trailing newlines, spaces, and tabs from cell text in the exported file(s) (default: false)
       RTL: false, // (Boolean), set direction of the worksheet to right-to-left (default: false)
-      sheetname: "Table Data", // (id, String), sheet name for the exported spreadsheet, (default: 'id')
+      sheetname: uploadedFileName, // (id, String), sheet name for the exported spreadsheet, (default: 'id')
     });
 
     tableExport().reset(); // Reset tableExport for updated table
