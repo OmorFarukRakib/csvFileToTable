@@ -156,6 +156,17 @@ csvFileInput.addEventListener("change", (e) => {
             autoWidth: false,
             responsive: true,
             scroller: true,
+            // dom: "Bfrtip",
+            // //buttons: ["copy", "csv", "excel", "pdf", "print"],
+            // buttons: [
+            //   {
+            //     extend: "csv",
+            //     title: "AAAAAAAAA",
+            //     exportOptions: {
+            //       columns: [1, 2, 3, 4, 5, 6],
+            //     },
+            //   },
+            // ],
           });
 
           let totalData = $("#csvRoot").DataTable().data().count();
