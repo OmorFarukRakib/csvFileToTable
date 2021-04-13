@@ -12,6 +12,9 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
   <link rel="stylesheet" href="myStyle.css" />
   <title>CSV Editor with HTML, CSS & JavaScript</title>
 </head>
@@ -25,12 +28,13 @@
     data-target=".bd-example-modal-xl" style="margin-left: 45%;">Start Tracking With CSV/Xlsx</button>
 
   <!-- Outer layer of the modal, when clicked the modal will be collapsed -->
-  <div class="modal fade bd-example-modal-xl modelBoxOuterLayer" tabindex="-1" role="dialog"
+  <div id="mainModal" class="modal fade bd-example-modal-xl modelBoxOuterLayer" tabindex="-1" role="dialog"
     aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 
     <!-- Inner Layer of the modal, where the content layer situated. clicking in this layer wont close the content layer -->
     <div class="modelBoxInnerLayer">
       <div class="navBarOfTable ">
+        <button id="closeMainModal"><i class="fas fa-times"></i></button>
         <div class="headerWithCsvName">
 
           <h4 class="mt-2">&nbsp;&nbsp;CSV/Excelで機器情報アップロード機能</h4>
