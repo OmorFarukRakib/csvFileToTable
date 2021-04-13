@@ -2,6 +2,7 @@ jQuery(document).ready(function () {
   let clicked = true;
   $("#csv-export-btn").on("click", function (e) {
     $(".tableexport-caption").show();
+    $(".tableexport-caption").prepend("<p>Test</p>");
     e.preventDefault();
     if (clicked) {
       ResultsToTable();
@@ -32,6 +33,18 @@ jQuery(document).ready(function () {
       trimWhitespace: true, // (Boolean), remove all leading/trailing newlines, spaces, and tabs from cell text in the exported file(s) (default: false)
       RTL: false, // (Boolean), set direction of the worksheet to right-to-left (default: false)
       sheetname: uploadedFileName, // (id, String), sheet name for the exported spreadsheet, (default: 'id')
+    });
+    //<i class="fas fa-times"></i>
+    //$(".tableexport-caption").prepend(`<button id="clk">X</button>`);
+    $(".tableexport-caption").prepend(
+      `<button id="clk"><i class="fas fa-times"></i></button>`
+    );
+    $("#clk").on("click", function (e) {
+      //console.log(`clikkkkkk mamaa`);
+      //$("#mainModal").modal("hide");
+      var container = $(".tableexport-caption");
+      container.remove();
+      container.hide();
     });
 
     tableExport().reset(); // Reset tableExport for updated table
