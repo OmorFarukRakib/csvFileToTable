@@ -236,15 +236,15 @@ td {
   margin-top: 5px;
   align-items: center;
   cursor: pointer;
-  padding-right: 25px;
-  padding-left: 25px;
+  /* padding-right: 25px;
+  padding-left: 25px; */
 }
 
-.tableexport-caption button :hover {
+/* .tableexport-caption button :hover {
   padding-right: 25px;
   padding-left: 25px;
   background: black;
-}
+} */
 
 .saveFileName {
   justify-content: center;
@@ -258,4 +258,22 @@ td {
   margin-left: 6px;
   border-radius: 10px;
   border: 1px solid #e6eaed;
+}
+
+#clk {
+  width: fit-content;
+  border: 0px;
+  background: none;
+  margin-top: 0;
+  margin-left: 91%;
+  cursor: pointer;
+}
+
+#closeMainModal {
+  width: fit-content;
+  border: 0px;
+  background: none;
+  margin-top: 5px;
+  margin-left: 97%;
+  cursor: pointer;
 }
