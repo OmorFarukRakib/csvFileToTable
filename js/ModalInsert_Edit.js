@@ -174,3 +174,9 @@ $(document).ready(function () {
 //   // };
 //   //addSerialNumber();
 // });
+
+// Close the main modal through close button
+
+$("#closeMainModal").on("click", function (e) {
+  $("#mainModal").modal("hide");
+});
