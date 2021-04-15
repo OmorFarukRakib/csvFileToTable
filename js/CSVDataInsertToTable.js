@@ -69,7 +69,7 @@ class TableCsv {
                         <td >
                           <div class="actionOptions">
                             
-                              <button class="editbtn btn btn-primary mr-2 btn-sm" data-toggle="modal" data-target="#editModal">Edit</button>
+                              <button class="editbtn btn mr-2 btn-sm" data-toggle="modal" data-target="#editModal">Edit</button>
                             
                              
                               <button class="deleteRow btn btn-danger btn-sm">Delete</button>
@@ -194,9 +194,6 @@ csvFileInput.addEventListener("change", (e) => {
 
   //for csv
 });
-
-
-
 
 $(document).ready(function () {
   $("#showModal").on("click", function (e) {
