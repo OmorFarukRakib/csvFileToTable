@@ -99,12 +99,12 @@ const csvFileInput = document.querySelector("#csvFileInput");
 const tableCsv = new TableCsv(tableRoot);
 var flag = 0;
 csvFileInput.addEventListener("change", (e) => {
-  localStorage.setItem("UploadNewFile", "1");
+  // localStorage.setItem("UploadNewFile", "1");
 
-  if (localStorage.getItem("UploadNewFile") === "1") {
-    $("#ImportFileField").hide();
-    $("#ImportAnotherFileField").show();
-  }
+  // if (localStorage.getItem("UploadNewFile") === "1") {
+  //   $("#ImportFileField").hide();
+  //   $("#ImportAnotherFileField").show();
+  // }
 
   $("#csvRoot").html("");
   $("#csvRoot thead").html("");
@@ -193,4 +193,17 @@ csvFileInput.addEventListener("change", (e) => {
   }
 
   //for csv
+});
+
+
+
+
+$(document).ready(function () {
+  $("#showModal").on("click", function (e) {
+    if (document.getElementById("csvFileInput").files.length == 0) {
+      alert("No File Selected");
+    } else {
+      $("#modalButton").click();
+    }
+  });
 });
