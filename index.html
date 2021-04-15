@@ -2,304 +2,324 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="./libs/bootstrap.min.css" />
-  <link rel="stylesheet" href="./libs/dataTables.bootstrap4.min.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-    crossorigin="anonymous" />
-  <link rel="stylesheet" href="myStyle.css" />
-  <title>CSV Editor with HTML, CSS & JavaScript</title>
+    <link rel="stylesheet" href="./libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="./libs/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="myStyle.css" />
+    <title>CSV Editor with HTML, CSS & JavaScript</title>
 </head>
 
 <body>
 
 
-  <!-- Button trigger modal -->
-  <br>
-  <button type="button" id="startTrackingByFileButton" class="btn btn-primary" data-toggle="modal"
-    data-target=".bd-example-modal-xl" style="margin-left: 45%;">Start Tracking With CSV/Xlsx</button>
+    <div id="ImportFileField">
+        <div class="row justify-content-center align-items-center pt-5">
+            <div class="col-3">
+                <label class="form-label" for="customFile">Import a CSV file</label>
+                <input type="file" class="form-control" id="csvFileInput" onchange="fileSelect(event)" />
+            </div>
+            <div class="col-3">
+                <button id="showModal" class="btn btn-primary">Start Tracking By CSV</button>
 
-  <!-- Outer layer of the modal, when clicked the modal will be collapsed -->
-  <div id="mainModal" class="modal fade bd-example-modal-xl modelBoxOuterLayer" tabindex="-1" role="dialog"
-    aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-
-    <!-- Inner Layer of the modal, where the content layer situated. clicking in this layer wont close the content layer -->
-    <div class="modelBoxInnerLayer">
-      <div class="navBarOfTable ">
-        <button id="closeMainModal"><i class="fas fa-times"></i></button>
-        <div class="headerWithCsvName">
-
-          <h4 class="mt-2">&nbsp;&nbsp;CSV/Excelで機器情報アップロード機能</h4>
-          <h4 class="mt-2" id='csvName'></h4>
+                <button type="button" id="modalButton" class="btn btn-primary" data-toggle="modal"
+                    data-target=".bd-example-modal-lg">Start Tracking By CSV</button>
+            </div>
         </div>
-        <hr>
+    </div>
 
-      </div>
 
-      <div class="modal-dialog modal-xl d-flex justify-content-center" style="width: 100%;">
 
-        <div class="modal-content main-table-container d-flex justify-content-center flex-fill"
-          style="width: auto;  margin-top: 10%;">
-          <!-- START -->
-          <div class="center " style="padding: 20px;">
-            <div id="ImportFileField">
+
+    <div id="mainModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <!-- Main content starts from here -->
+            <div id="mainModalContent" class="modal-content">
+                <div class="navBarOfTable ">
+                    <button id="closeMainModal"><i class="fas fa-times"></i></button>
+                    <div class="headerWithCsvName">
+
+                        <h4 class="mt-2">&nbsp;&nbsp;CSV/Excelで機器情報アップロード機能</h4>
+                        <h4 class="mt-2" id='csvName'></h4>
+                    </div>
+                    <hr>
+
+                </div>
+
+                <div class="center " style="padding: 20px;">
+                    <!-- <div id="ImportFileField">
               <label class="form-label" for="customFile">Import a CSV/Xlsx file</label>
               <input type="file" class="form-control" id="csvFileInput" onchange="fileSelect(event)" />
-            </div>
-            <div id="ImportAnotherFileField">
-              <label class="form-label" for="customFile">Import a New File</label>
-              <button id="ImportAnotherFileButton" class="btn btn-primary btn-sm ">New File</button>
-            </div>
-            <div class=" csv-export-btn-div">
-              <!-- 
+            </div> -->
+                    <!-- <div id="ImportAnotherFileField">
+                            <label class="form-label" for="customFile">Import a New File</label>
+                            <button id="ImportAnotherFileButton" class="btn btn-primary btn-sm ">New File</button>
+                        </div> -->
+                    <div class=" csv-export-btn-div">
+                        <!-- 
                 <p class="font-weight-light">
           
           * Double click in the data field to edit data
         </p> -->
+                        <div id="project_name_in_csv_uploader" class="row justify-content-center align-items-center">
+                            <label for="project_name_in_csv_uploader_input"><b>Project Name:&nbsp;&nbsp;</b></label>
+                            <input type="text" id="project_name_in_csv_uploader_input" name="Project-Name"><br><br>
+                        </div>
+                        <div class="card table-info-card mb-3 mt-3" style="margin: 5px;">
+                            <div class="row ml-3">
+                                <div class="card-body col-6">
+                                    Total Number of Track ID: <span id="TotalNumberOfTrackID"></span>
+                                </div>
+                                <div class="card-body col-6">
+                                    Total Number of Empty Track ID: <span id="TotalNumberOfEmptyTrackID"></span>
+                                </div>
+                            </div>
+                            <div class="row ml-3">
+                                <div class="card-body col-6">
+                                    Another status about the table: <span id="TotalNumberOfTrackID"></span>
+                                </div>
+                                <div class="card-body col-6">
+                                    Another status about the table: <span id="TotalNumberOfEmptyTrackID"></span>
+                                </div>
+                            </div>
+                        </div>
 
-              <div class="card table-info-card mb-3 mt-3" style="margin: 5px;">
-                <div class="row ml-3">
-                  <div class="card-body col-6">
-                    Total Number of Track ID: <span id="TotalNumberOfTrackID"></span>
-                  </div>
-                  <div class="card-body col-6">
-                    Total Number of Empty Track ID: <span id="TotalNumberOfEmptyTrackID"></span>
-                  </div>
-                </div>
-                <div class="row ml-3">
-                  <div class="card-body col-6">
-                    Another status about the table: <span id="TotalNumberOfTrackID"></span>
-                  </div>
-                  <div class="card-body col-6">
-                    Another status about the table: <span id="TotalNumberOfEmptyTrackID"></span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- <button type="button" name="convert" id="csv-export-btn" class="btn btn-primary" this.disabled="true;">
+                        <!-- <button type="button" name="convert" id="csv-export-btn" class="btn btn-primary" this.disabled="true;">
                 Download
               </button> -->
 
 
-              <div class="pr-2" id="tableContainer">
-                <table id="csvRoot" class="tableCSV table table-striped table-bordered"></table>
-                <!-- MODEL INSERT -->
-                <!-- Download Upload and Insert New Row Button starts-->
-                <div class="buttonPositionController mt-5">
-                  <button type="button" style="margin-right: 5px;" name="convert" id="csv-export-btn"
-                    class="btn btn-primary btn-sm" this.disabled="true;">
-                    Download
-                  </button>
-                  <!-- Button trigger modal For Table Export in CSV Starts
+                        <div class="pr-2" id="tableContainer">
+                            <table id="csvRoot" class="tableCSV table table-striped table-bordered"></table>
+                            <!-- MODEL INSERT -->
+                            <!-- Download Upload and Insert New Row Button starts-->
+                            <div class="buttonPositionController mt-5">
+                                <button type="button" style="margin-right: 5px;" name="convert" id="csv-export-btn"
+                                    class="btn btn-primary btn-sm" this.disabled="true;">
+                                    Download
+                                </button>
+                                <!-- Button trigger modal For Table Export in CSV Starts
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                     Launch CSV Downloader
                   </button>
                   Button trigger modal For Table Export in CSV ENDS-->
 
-                  <button type="button" style="margin-right: 5px;" name="convert" id="uploadToServer-btn"
-                    class="btn btn-primary btn-sm" this.disabled="true;">
-                    Upload
-                  </button>
-                  <button type="button" id="insert" class="btn btn-primary btn-sm float-right mr-4" data-toggle="modal"
-                    data-target="#insertNewRow">
-                    Add a row
-                  </button>
+                                <button type="button" style="margin-right: 5px;" name="convert" id="uploadToServer-btn"
+                                    class="btn btn-primary btn-sm" this.disabled="true;">
+                                    Upload
+                                </button>
+                                <button type="button" id="insert" class="btn btn-primary btn-sm float-right mr-4"
+                                    data-toggle="modal" data-target="#insertNewRow">
+                                    Add a row
+                                </button>
 
-                </div>
-                <!-- Download Upload and Insert New Row Button ends-->
+                            </div>
+                            <!-- Download Upload and Insert New Row Button ends-->
 
-                <!-- <button id="insert" class="btn btn-primary" style="margin-top: 10px">
+                            <!-- <button id="insert" class="btn btn-primary" style="margin-top: 10px">
                   Insert new row
                 </button> 
                 <input type="number" id="insertNo" placeholder="Total no. of insertion"></input>
                 -->
-              </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
             </div>
-
-            <table id="dummy" class="tableCSV table table-striped table-bordered">
-              <tbody></tbody>
-            </table>
-          </div>
-          <!-- END -->
         </div>
-      </div>
     </div>
-  </div>
 
 
-  <!-- Button trigger modal -->
-  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#insertNewRow">
+
+
+
+
+
+
+
+
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#insertNewRow">
     INSERT
   </button> -->
 
-  <!-- INSERT Modal -->
-  <div class="modal fade" id="insertNewRow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">New Information Insertion</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form method="post" id="InsertForm">
-            <table class="table table-hover">
-              <tr>
-                <td>TrackID </td>
-                <td> <input type="text" name="TrackID" style="font-weight: bold;" class="from-control"
-                    placeholder="TrackID"></td>
-              </tr>
-              <tr>
-                <td>Device ID </td>
-                <td> <input type="text" name="DeviceID" style="font-weight: bold;" class="from-control"
-                    placeholder="Device ID">
-                </td>
-              </tr>
-              <tr>
-                <td>Device Vendor </td>
-                <td> <input type="text" name="DeviceVendor" style="font-weight: bold;" class="from-control"
-                    placeholder="Device Vendor">
-                </td>
-              </tr>
-              <tr>
-                <td>Device Model </td>
-                <td> <input type="text" name="DeviceModel" style="font-weight: bold;" class="from-control"
-                    placeholder="Device Model">
-                </td>
+    <!-- INSERT Modal -->
+    <div class="modal fade" id="insertNewRow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">New Information Insertion</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" id="InsertForm">
+                        <table class="table table-hover">
+                            <tr>
+                                <td>TrackID </td>
+                                <td> <input type="text" name="TrackID" style="font-weight: bold;" class="from-control"
+                                        placeholder="TrackID"></td>
+                            </tr>
+                            <tr>
+                                <td>Device ID </td>
+                                <td> <input type="text" name="DeviceID" style="font-weight: bold;" class="from-control"
+                                        placeholder="Device ID">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Device Vendor </td>
+                                <td> <input type="text" name="DeviceVendor" style="font-weight: bold;"
+                                        class="from-control" placeholder="Device Vendor">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Device Model </td>
+                                <td> <input type="text" name="DeviceModel" style="font-weight: bold;"
+                                        class="from-control" placeholder="Device Model">
+                                </td>
 
-              </tr>
+                            </tr>
 
 
 
-              <!-- <tr>
+                            <!-- <tr>
 
                 <td>Device Rating </td>
                 <td> <input type="text" name="deviceRating" class="from-control" placeholder="Enter device Rating"></td>
               </tr> -->
 
-              <tr>
-                <td>Device Serial </td>
-                <td> <input type="text" name="DeviceSerial" style="font-weight: bold;" class="from-control"
-                    placeholder="Device Serial">
-                </td>
-              </tr>
+                            <tr>
+                                <td>Device Serial </td>
+                                <td> <input type="text" name="DeviceSerial" style="font-weight: bold;"
+                                        class="from-control" placeholder="Device Serial">
+                                </td>
+                            </tr>
 
-              <tr>
-                <td>Memo </td>
-                <td> <input type="text" name="Memo" style="font-weight: bold;" class="from-control" placeholder="Memo">
-                </td>
-              </tr>
+                            <tr>
+                                <td>Memo </td>
+                                <td> <input type="text" name="Memo" style="font-weight: bold;" class="from-control"
+                                        placeholder="Memo">
+                                </td>
+                            </tr>
 
-              <tr>
-                <td>Save Tracking Informations </td>
-                <td colspan="2" align="center"> <input type="submit" name="submitTable" class="btn btn-primary"
-                    value="Save"></td>
-              </tr>
+                            <tr>
+                                <td>Save Tracking Informations </td>
+                                <td colspan="2" align="center"> <input type="submit" name="submitTable"
+                                        class="btn btn-primary" value="Save"></td>
+                            </tr>
 
 
-            </table>
-          </form>
+                        </table>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="closeInsertModal" class="btn btn-secondary"
+                        data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" id="closeInsertModal" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-        </div>
-      </div>
     </div>
-  </div>
 
 
-  <!-- Modal ENDS -->
+    <!-- Modal ENDS -->
 
 
 
 
-  <!-- Modal for editing starts -->
-  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Edit existing table data</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="panel-body">
-            <form method="post" id="EditForm">
-              <table class="table table-hover">
-                <tr>
-                  <td>TrackID </td>
-                  <td>
-                    <input type="text" name="TrackIDEdit" style="font-weight: bold;" class="from-control"
-                      id="TrackIDEdit" placeholder="TrackID">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Device ID </td>
-                  <td> <input type="text" name="DeviceIDEdit" style="font-weight: bold;" class="from-control"
-                      id="DeviceIDEdit" placeholder="Device ID"></td>
-                </tr>
-                <tr>
-                  <td>Device Vendor </td>
-                  <td> <input type="text" name="DeviceVendorEdit" style="font-weight: bold;" class="from-control"
-                      id="DeviceVendorEdit" placeholder="Device Vendor"></td>
-                </tr>
-                <tr>
-                  <td>Device Model </td>
-                  <td> <input type="text" name="deviceModelEdit" style="font-weight: bold;" class="from-control"
-                      id="deviceModelEdit" placeholder="Device Model"></td>
+    <!-- Modal for editing starts -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit existing table data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="panel-body">
+                        <form method="post" id="EditForm">
+                            <table class="table table-hover">
+                                <tr>
+                                    <td>TrackID </td>
+                                    <td>
+                                        <input type="text" name="TrackIDEdit" style="font-weight: bold;"
+                                            class="from-control" id="TrackIDEdit" placeholder="TrackID">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Device ID </td>
+                                    <td> <input type="text" name="DeviceIDEdit" style="font-weight: bold;"
+                                            class="from-control" id="DeviceIDEdit" placeholder="Device ID"></td>
+                                </tr>
+                                <tr>
+                                    <td>Device Vendor </td>
+                                    <td> <input type="text" name="DeviceVendorEdit" style="font-weight: bold;"
+                                            class="from-control" id="DeviceVendorEdit" placeholder="Device Vendor"></td>
+                                </tr>
+                                <tr>
+                                    <td>Device Model </td>
+                                    <td> <input type="text" name="deviceModelEdit" style="font-weight: bold;"
+                                            class="from-control" id="deviceModelEdit" placeholder="Device Model"></td>
 
-                </tr>
-                <tr>
-                  <td>Device Serial </td>
-                  <td> <input type="text" name="DeviceSerialEdit" style="font-weight: bold;" class="from-control"
-                      id="DeviceSerialEdit" placeholder="Device Serial">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Memo </td>
-                  <td> <input type="text" name="MemoEdit" style="font-weight: bold;" class="from-control" id="MemoEdit"
-                      placeholder="Memo">
-                  </td>
-                </tr>
-                <!-- {* <tr>
+                                </tr>
+                                <tr>
+                                    <td>Device Serial </td>
+                                    <td> <input type="text" name="DeviceSerialEdit" style="font-weight: bold;"
+                                            class="from-control" id="DeviceSerialEdit" placeholder="Device Serial">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Memo </td>
+                                    <td> <input type="text" name="MemoEdit" style="font-weight: bold;"
+                                            class="from-control" id="MemoEdit" placeholder="Memo">
+                                    </td>
+                                </tr>
+                                <!-- {* <tr>
                   <td>Save Device Informations </td>
                   <td colspan="2" align="center"> <input type="submit" name="submitTable" class="btn btn-primary"
                       value="Save"></td>
                 </tr> *} -->
-              </table>
+                            </table>
 
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" id="editModalClose" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <input type="submit" name="submitTableEdit" class="btn btn-primary" value="Update">
-          <!-- <button type="button" class="btn btn-primary">Save changes</button>  -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="editModalClose" class="btn btn-secondary"
+                        data-dismiss="modal">Close</button>
+                    <input type="submit" name="submitTableEdit" class="btn btn-primary" value="Update">
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button>  -->
 
+                </div>
+                </form>
+            </div>
         </div>
-        </form>
-      </div>
     </div>
-  </div>
-  <!-- MODEL FOR EDITING ENDS -->
+    <!-- MODEL FOR EDITING ENDS -->
 
 
 
 
 
-  <!-- Modal For Table Export in CSV  Starts
+    <!-- Modal For Table Export in CSV  Starts
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -330,43 +350,43 @@
 
 
 
-  <!-- Here are the CDNs needed -->
+    <!-- Here are the CDNs needed -->
 
 
-  <script src="./libs/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
 
-  <script src="./libs/bootstrap.min.js"></script>
-  <script src="./libs/jquery.dataTables.min.js"></script>
-  <script src="./libs/dataTables.bootstrap4.min.js"></script>
+    <script src="./libs/bootstrap.min.js"></script>
+    <script src="./libs/jquery.dataTables.min.js"></script>
+    <script src="./libs/dataTables.bootstrap4.min.js"></script>
 
 
-  <script src="./libs/FileSaver.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.7/xlsx.core.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.4-a/xls.core.min.js"></script>
-  <!-- <script src="./libs/xlsx.full.min.js"></script> -->
+    <script src="./libs/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.7/xlsx.core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.4-a/xls.core.min.js"></script>
+    <!-- <script src="./libs/xlsx.full.min.js"></script> -->
 
-  <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-  <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
-  <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
 
-  <script src="./libs/tableexport.min.js"></script>
-  <script src="./libs/papaparse.min.js"></script>
+    <script src="./libs/tableexport.min.js"></script>
+    <script src="./libs/papaparse.min.js"></script>
 
-  <!-- Here are the custom JS file  -->
+    <!-- Here are the custom JS file  -->
 
-  <script src="./js/excellToTable.js"></script>
-  <script type="module" src="./js/CSVDataInsertToTable.js"></script>
-  <script src="./js/downloadCSVFromTable.js"></script>
-  <!-- <script src="./js/dataEdit.js"></script> -->
-  <script src="./js/ModalInsert_Edit.js"></script>
-  <script src="./js/rowDelete.js"></script>
-  <!-- <script src="./js/rowInsert.js"></script> -->
+    <script src="./js/excellToTable.js"></script>
+    <script type="module" src="./js/CSVDataInsertToTable.js"></script>
+    <script src="./js/downloadCSVFromTable.js"></script>
+    <!-- <script src="./js/dataEdit.js"></script> -->
+    <script src="./js/ModalInsert_Edit.js"></script>
+    <script src="./js/rowDelete.js"></script>
+    <!-- <script src="./js/rowInsert.js"></script> -->
 </body>
 
 </html>
