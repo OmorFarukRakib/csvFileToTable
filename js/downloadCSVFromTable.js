@@ -37,9 +37,9 @@ jQuery(document).ready(function () {
     //<i class="fas fa-times"></i>
     //$(".tableexport-caption").prepend(`<button id="clk">X</button>`);
     $(".tableexport-caption").prepend(
-      `<button id="clk"><i class="fas fa-times"></i></button>`
+      `<button id="donwload-Modal"><i class="fas fa-times"></i></button>`
     );
-    $("#clk").on("click", function (e) {
+    $("#donwload-Modal").on("click", function (e) {
       //console.log(`clikkkkkk mamaa`);
       //$("#mainModal").modal("hide");
       var container = $(".tableexport-caption");
@@ -75,5 +75,5 @@ $("#csvFileInput").on("input", function () {
 function fileSelect(e) {
   console.log(e.target.files[0].name);
   let csvFilename = e.target.files[0].name;
-  $("#csvName").html("" + csvFilename + "&nbsp;&nbsp;");
+  $("#csvName").html("File Name: " + csvFilename + "&nbsp;&nbsp;");
 }
