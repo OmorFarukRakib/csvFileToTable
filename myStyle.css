@@ -164,7 +164,21 @@ td {
 
 .editbtn {
   background-color: #66b2ff;
+  color: white;
 }
+#insert {
+  background-color: #33A64C;
+  color: white;
+}
+#csv-export-btn{
+  background-color: #1CA5B8;
+  color: white;
+}
+#uploadToServer-btn{
+  background-color: #1CA5B8;
+  color: white;
+}
+
 
 .main-table-container {
   background: #e6eaed;
@@ -296,11 +310,11 @@ td {
   box-shadow: -3px -3px 5px #ffffff70, 3px 3px 15px #00000090;
 }
 
-#project_name_in_csv_uploader_input{
-background: #e6eaed;
+#project_name_in_csv_uploader_input {
+  background: #e6eaed;
   width: fit-content;
 }
 
-#modalButton{
+#modalButton {
   display: none;
 }
