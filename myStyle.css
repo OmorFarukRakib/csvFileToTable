@@ -1,4 +1,4 @@
-table {
+/* table {
   border-collapse: collapse;
   border-radius: 5px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
@@ -6,7 +6,7 @@ table {
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
   font-size: 14px;
-}
+} */
 
 th {
   background: #eee;
@@ -17,8 +17,9 @@ th {
 th,
 td {
   padding: 10px 10px;
-  vertical-align: 200px;
+  /* vertical-align: 200px; */
   border: 1px solid #e6eaed;
+  width: 100px;
 }
 
 tr,
@@ -34,7 +35,7 @@ tr:nth-child(even) {
 .center {
   margin: auto;
   width: 96%;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 #custom-btn {
@@ -181,6 +182,7 @@ td {
 }
 #csvFileInput {
   background: #e6eaed;
+  width: fit-content;
 }
 
 #csvRoot {
@@ -260,7 +262,7 @@ td {
   border: 1px solid #e6eaed;
 }
 
-#clk {
+#donwload-Modal {
   width: fit-content;
   border: 0px;
   background: none;
@@ -269,6 +271,9 @@ td {
   cursor: pointer;
 }
 
+.tableexport-caption {
+  margin-left: 40%;
+}
 #closeMainModal {
   width: fit-content;
   border: 0px;
@@ -276,4 +281,26 @@ td {
   margin-top: 5px;
   margin-left: 97%;
   cursor: pointer;
+}
+
+.tableCSV thead tr th {
+  width: 100px;
+}
+#mainModalContent {
+  width: fit-content;
+  margin-top: 10vh;
+  right: 12vh;
+  background: #e6eaed;
+  border: none;
+  border-radius: 15px;
+  box-shadow: -3px -3px 5px #ffffff70, 3px 3px 15px #00000090;
+}
+
+#project_name_in_csv_uploader_input{
+background: #e6eaed;
+  width: fit-content;
+}
+
+#modalButton{
+  display: none;
 }
