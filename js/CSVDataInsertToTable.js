@@ -185,10 +185,12 @@ csvFileInput.addEventListener("change", (e) => {
         });
       },
     });
-  } else if (extension === "xlsx" || extension === "xls") {
-    ExportToTable();
-  } else {
-    alert("WRONG FILE");
+ }
+  // else if (extension === "xlsx" || extension === "xls") {
+  //   ExportToTable();
+  // }
+  else {
+    alert("WRONG FILE. Please Upload CSV file!");
     $(".csv-export-btn-div").hide();
   }
 
